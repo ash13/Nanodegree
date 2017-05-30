@@ -12057,6 +12057,7 @@ Standard deviation of prices: 165,171.13
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer:</strong> 0.923</p>
+<p>Looking at the R^2 score, we can say that the model has captured the variation of target variable very well. In fact, the predicted values are very close to the actual values. Though the model can still be improved, the current model does a good job in the initial phase of prediction.</p>
 
 </div>
 </div>
@@ -13726,6 +13727,7 @@ RK5CYII=
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer: </strong> Grid search feature in sklearn helps in optimising the model parameters automatically. It tries out various combinations of the parameter values while building the model to see which are the best parameter values. It helps us save the trial and error time we spend on trying and tuning our model with the parameters manually. We can use it obtain the best possible values for the params needed for building the model. For example : in decision tree model, the grid search can help us determine the optimum max depth of the model.</p>
+<p>Grid search finds the optimised hyper-parameters by exhaustively trying out all the possible combinations of the param values. It manualy tries all the possible values from the specified subset of the parameter space of a learning algorithm specified with the param_grid parameter. The various combinations are the candidates from the grid of parameter values specified with the param_grid parameter.</p>
 
 </div>
 </div>
@@ -13746,7 +13748,7 @@ RK5CYII=
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: </strong> K-fold cross-validation technique helps us train the model in a much better way. Without k-fold , we would split the data into a single training set  and  a single test set. We would train the model on train data and find its performance on the test data. But with k-fold, we get to divide training data into further multiple(k) sets of data. Within these k sets of data, we use k-1 sets as training and the remaining 1 set as test data to train the model. Every set gets to be test data at some point of the model building. This ensures we use the data efficiently to train the model.</p>
+<p><strong>Answer: </strong> K-fold cross-validation technique helps us train the model in a much better way. Without k-fold , we would split the data into a single training set  and  a single test set. We would train the model on train data and find its performance on the test data. But with k-fold, we get to divide training data into further multiple(k) sets of data. Within these k sets of data, we use k-1 sets as training and the remaining 1 set as test data to train the model. Every set gets to be test data at some point of the model building. This ensures we use the data efficiently to train the model. At the end, the error rates of all k times are averaged to give the final cross-validation score. The advantage of this is that we don't have to worry about the distribution of test and train data. Also it gives a better estimate on how the model might perform on the real world new data set.</p>
 <p>This technique helps in grid search to experiment the various model parameter values on multiple data (k-1) sets,multiple times to see which fits the model best and test it on multiple data sets. Without cross validated set, grid search could give the parameter values which fits only one particular data set perfectly, whereas it might not be the best values for a new given data set.</p>
 
 </div>
@@ -13805,7 +13807,7 @@ For the <code>fit_model</code> function in the code cell below, you will need to
     <span class="n">regressor</span> <span class="o">=</span> <span class="n">DecisionTreeRegressor</span><span class="p">()</span>
 
     <span class="c1"># TODO: Create a dictionary for the parameter &#39;max_depth&#39; with a range from 1 to 10</span>
-    <span class="n">params</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;max_depth&#39;</span><span class="p">:</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">)}</span>
+    <span class="n">params</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;max_depth&#39;</span><span class="p">:</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">11</span><span class="p">)}</span>
 
     <span class="c1"># TODO: Transform &#39;performance_metric&#39; into a scoring function using &#39;make_scorer&#39; </span>
     <span class="n">scoring_fnc</span> <span class="o">=</span> <span class="n">make_scorer</span><span class="p">(</span><span class="n">performance_metric</span><span class="p">)</span>
